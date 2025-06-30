@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+pyvenv.cfg
+.Python
+
+# Environment Variables & API Keys
+.env
+.env.local
+.env.development
+.env.production
+*.env
+
+# Telegram Bot Token & API Keys
+bot_token.txt
+api_keys.txt
+config.ini
+secrets.yaml
+secrets.json
+.secrets
+
+# LLM API Configuration
+openai_key.txt
+anthropic_key.txt
+gemini_key.txt
+*.api_key
+
+# Logs
+*.log
+logs/
+bot.log
+telegram_bot.log
+
+# Database files (if using local storage)
+*.db
+*.sqlite
+*.sqlite3
+bot_data.db
+
+# Data files (conversation history, user data)
+data/
+user_data/
+chat_logs/
+conversations/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Backup files
+*.bak
+*.backup
+
+# Bot runtime files
+*.pid
+bot.session
