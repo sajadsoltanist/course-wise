@@ -49,10 +49,13 @@ telegram_bot.log
 bot_data.db
 
 # Data files (conversation history, user data)
-data/
 user_data/
 chat_logs/
 conversations/
+
+# Keep documentation in all branches
+!docs/
+!CLAUDE.md
 
 # Temporary files
 *.tmp
