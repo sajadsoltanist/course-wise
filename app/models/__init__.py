@@ -14,6 +14,7 @@ from .base import Base, TimestampMixin
 from .student import Student, StudentGrade, StudentSpecialization
 from .course import Course, CoursePrerequisite
 from .elective import ElectiveGroup, GroupCourse
+from .session import UserSession
 
 # Export metadata for Alembic migrations
 metadata = Base.metadata
@@ -37,6 +38,9 @@ __all__ = [
     # Elective models
     "ElectiveGroup",
     "GroupCourse",
+    
+    # Session models
+    "UserSession",
 ]
 
 # Model registry for dynamic access
@@ -48,6 +52,7 @@ MODEL_REGISTRY = {
     "CoursePrerequisite": CoursePrerequisite,
     "ElectiveGroup": ElectiveGroup,
     "GroupCourse": GroupCourse,
+    "UserSession": UserSession,
 }
 
 def get_model_by_name(model_name: str):
