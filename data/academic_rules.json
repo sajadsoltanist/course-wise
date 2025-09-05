@@ -1,0 +1,116 @@
+{
+  "credit_limits": {
+    "description": "محدودیت‌های تعداد واحد بر اساس معدل دانشجو",
+    "rules": [
+      {
+        "condition": "GPA >= 17.0",
+        "max_credits": 24,
+        "description": "دانشجویان با معدل بالای 17 تا 24 واحد مجاز هستند"
+      },
+      {
+        "condition": "14.0 <= GPA < 17.0",
+        "max_credits": 20,
+        "description": "دانشجویان با معدل بین 14 تا 17 حداکثر 20 واحد"
+      },
+      {
+        "condition": "12.0 <= GPA < 14.0",
+        "max_credits": 16,
+        "description": "دانشجویان مشروط (معدل بین 12 تا 14) حداکثر 16 واحد"
+      },
+      {
+        "condition": "GPA < 12.0",
+        "max_credits": 12,
+        "description": "دانشجویان در خطر اخراج حداکثر 12 واحد"
+      }
+    ],
+    "special_cases": {
+      "probation_previous_semester": {
+        "description": "اگر ترم قبل مشروط شده باشد",
+        "max_credits": 14,
+        "conditions": [
+          "معدل ترم قبل زیر 12",
+          "یا بیش از 2 درس مردودی در ترم قبل"
+        ]
+      },
+      "first_semester": {
+        "description": "ترم اول دانشجویان جدید",
+        "max_credits": 18,
+        "note": "دانشجویان جدیدالورود بدون در نظر گیری معدل"
+      }
+    }
+  },
+  
+  "general_course_rules": {
+    "description": "قوانین مربوط به دروس عمومی",
+    "rules": {
+      "religious_courses_limit": {
+        "description": "دروس معارف اسلامی",
+        "max_per_semester": 1,
+        "applicable_courses": [
+          "90610", "90615", "90620", "90625", "90630",
+          "اندیشه اسلامی", "تاریخ اسلام", "اخلاق اسلامی"
+        ],
+        "note": "در هر ترم فقط یک درس معارف قابل انتخاب است"
+      },
+      "physical_education": {
+        "description": "تربیت بدنی",
+        "max_total": 2,
+        "credits_per_course": 1,
+        "note": "حداکثر 2 واحد تربیت بدنی در کل دوره"
+      },
+      "language_courses": {
+        "description": "دروس زبان",
+        "prerequisites": {
+          "ENG102": ["ENG101"],
+          "ENG103": ["ENG102"]
+        },
+        "note": "دروس زبان باید به ترتیب گذرانده شوند"
+      }
+    }
+  },
+  
+  "academic_standing_rules": {
+    "description": "قوانین وضعیت تحصیلی",
+    "probation_conditions": [
+      "معدل کل کمتر از 12",
+      "معدل ترم کمتر از 10",
+      "بیش از 3 درس مردودی در یک ترم",
+      "عدم کسب حداقل 10 واحد در ترم"
+    ],
+    "dismissal_conditions": [
+      "دو ترم متوالی مشروط",
+      "معدل کل کمتر از 10",
+      "عدم جبران واحدهای مردودی"
+    ]
+  },
+  
+  "priority_rules": {
+    "description": "اولویت‌بندی انتخاب دروس",
+    "priorities": [
+      {
+        "level": 1,
+        "description": "دروس مردودی",
+        "weight": 100,
+        "note": "بالاترین اولویت برای جبران مردودی‌ها"
+      },
+      {
+        "level": 2,
+        "description": "دروس پیش‌نیاز",
+        "weight": 90,
+        "note": "دروس که پیش‌نیاز دروس آینده هستند"
+      },
+      {
+        "level": 3,
+        "description": "دروس ترم جاری",
+        "weight": 80,
+        "note": "دروس مربوط به ترم فعلی دانشجو"
+      },
+      {
+        "level": 4,
+        "description": "دروس عمومی باقی‌مانده",
+        "weight": 70,
+        "note": "تکمیل دروس عمومی"
+      }
+    ]
+  }
+}

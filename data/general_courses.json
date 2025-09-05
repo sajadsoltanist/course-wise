@@ -1,0 +1,294 @@
+{
+  "description": "دروس عمومی مشترک تمام رشته‌ها",
+  "applicable_to_all_entry_years": true,
+  
+  "course_categories": {
+    "religious_courses": {
+      "description": "دروس معارف اسلامی",
+      "rules": {
+        "max_per_semester": 1,
+        "total_required": 6,
+        "note": "در هر ترم فقط یک درس معارف قابل انتخاب است"
+      },
+      "courses": [
+        {
+          "course_code": "90610",
+          "course_name": "اندیشه اسلامی ۱",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90615",
+          "course_name": "اندیشه اسلامی ۲",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": ["90610"],
+          "semester_offered": [2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90620",
+          "course_name": "انقلاب اسلامی ایران",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90625",
+          "course_name": "آشنایی با دفاع مقدس",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90755",
+          "course_name": "تاریخ تحلیلی صدر اسلام",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90630",
+          "course_name": "تاریخ فرهنگ و تمدن اسلام و ایران",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "91003",
+          "course_name": "انس با قرآن",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "91004",
+          "course_name": "تفسیر موضوعی قرآن",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "91006",
+          "course_name": "وصایای امام",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": ["90610"],
+          "semester_offered": [2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        }
+      ]
+    },
+    
+    "language_courses": {
+      "description": "دروس زبان",
+      "rules": {
+        "sequential_order": true,
+        "note": "دروس زبان باید به ترتیب گذرانده شوند"
+      },
+      "courses": [
+        {
+          "course_code": "55001",
+          "course_name": "زبان پیش (درس پیش‌دانشگاهی)",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1],
+          "is_mandatory": true,
+          "note": "درس پیش‌دانشگاهی"
+        },
+        {
+          "course_code": "ENG101",
+          "course_name": "زبان انگلیسی (عمومی) ۱",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": ["55001"],
+          "semester_offered": [2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "ENG102",
+          "course_name": "زبان انگلیسی (عمومی) ۲",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": ["ENG101"],
+          "semester_offered": [3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "ENG201",
+          "course_name": "زبان انگلیسی (تخصصی)",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": ["ENG102"],
+          "semester_offered": [4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90029",
+          "course_name": "زبان فارسی",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        }
+      ]
+    },
+    
+    "physical_education": {
+      "description": "دروس تربیت بدنی و ورزش",
+      "rules": {
+        "max_total_credits": 2,
+        "sequential_order": true,
+        "note": "حداکثر 2 واحد تربیت بدنی در کل دوره"
+      },
+      "courses": [
+        {
+          "course_code": "99079",
+          "course_name": "تربیت بدنی",
+          "theoretical_credits": 0,
+          "practical_credits": 1,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "99080",
+          "course_name": "ورزش ۱",
+          "theoretical_credits": 0,
+          "practical_credits": 1,
+          "prerequisites": ["99079"],
+          "semester_offered": [2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        }
+      ]
+    },
+    
+    "workshop_courses": {
+      "description": "دروس کارگاه عمومی",
+      "rules": {
+        "sequential_order": true,
+        "note": "دروس کارگاه باید به ترتیب گذرانده شوند"
+      },
+      "courses": [
+        {
+          "course_code": "90094",
+          "course_name": "آشنایی با صنعت (کارگاه عمومی)",
+          "theoretical_credits": 0,
+          "practical_credits": 1,
+          "prerequisites": [],
+          "semester_offered": [2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90088",
+          "course_name": "کارآفرینی (کارگاه عمومی)",
+          "theoretical_credits": 0,
+          "practical_credits": 2,
+          "prerequisites": ["90094"],
+          "semester_offered": [3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        }
+      ]
+    },
+    
+    "life_skills": {
+      "description": "دروس مهارت‌های زندگی",
+      "courses": [
+        {
+          "course_code": "90001",
+          "course_name": "آیین زندگی",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        },
+        {
+          "course_code": "90005",
+          "course_name": "دانش خانواده و جمعیت",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1, 2, 3, 4, 5, 6, 7, 8],
+          "is_mandatory": true
+        }
+      ]
+    },
+    
+    "pre_university": {
+      "description": "دروس پیش‌دانشگاهی",
+      "note": "دروس جبرانی برای دانشجویانی که در کنکور نمره کافی نداشته‌اند",
+      "courses": [
+        {
+          "course_code": "55001",
+          "course_name": "زبان پیش",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1],
+          "is_mandatory": false,
+          "conditional": true
+        },
+        {
+          "course_code": "55002",
+          "course_name": "ریاضی پیش",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1],
+          "is_mandatory": false,
+          "conditional": true
+        },
+        {
+          "course_code": "55005",
+          "course_name": "فیزیک پیش",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "prerequisites": [],
+          "semester_offered": [1],
+          "is_mandatory": false,
+          "conditional": true
+        }
+      ]
+    }
+  },
+  
+  "selection_rules": {
+    "religious_courses": {
+      "max_per_semester": 1,
+      "total_required": 6,
+      "must_complete_all": true,
+      "distribution": "حداقل یک درس معارف در هر ترم تا تکمیل 6 درس"
+    },
+    "language_progression": {
+      "strict_sequence": true,
+      "note": "زبان پیش → انگلیسی ۱ → انگلیسی ۲ → زبان تخصصی"
+    },
+    "workshop_progression": {
+      "strict_sequence": true,
+      "note": "آشنایی با صنعت → کارآفرینی"
+    },
+    "physical_education": {
+      "strict_sequence": true,
+      "max_total": 2,
+      "note": "تربیت بدنی → ورزش ۱"
+    }
+  }
+}

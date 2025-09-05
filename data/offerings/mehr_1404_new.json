@@ -1,0 +1,635 @@
+{
+  "semester": "mehr_1404",
+  "description": "دروس ارائه شده ترم مهر 1404 - دانشگاه آزاد شهرکرد",
+  
+  "entry_year_groups": {
+    "1403": {
+      "description": "ورودی 1403",
+      "semesters": {
+        "1": {
+          "description": "ترم یک مهندسی کامپیوتر ورودی 1403",
+          "groups": ["G1", "G2", "G3", "G4"],
+          "courses": [
+            {
+              "course_code": "7000031535",
+              "course_name": "مبانی کامپیوتر و برنامه‌سازی",
+              "credits": {"theoretical": 2, "practical": 2},
+              "instructor": "توکلی",
+              "time_slots": ["شنبه 8:00-11:00", "شنبه 13:00-16:00", "دوشنبه 8:00-11:00", "دوشنبه 13:00-16:00"],
+              "exam_date": "1404/10/17",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "7000031531",
+              "course_name": "فیزیک ۱",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "قادری پور، ریاحی، مردانی، سمیرا حسین زاده",
+              "time_slots": ["یکشنبه 8:00-11:00", "یکشنبه 13:00-16:00", "سه‌شنبه 8:00-11:00", "سه‌شنبه 13:00-16:00"],
+              "exam_date": "1404/10/24",
+              "exam_time": "8:00-10:00"
+            },
+            {
+              "course_code": "7000031527",
+              "course_name": "ریاضی ۱",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "نعمتی زاده، فاضلی، مولوی، بنی هاشمی",
+              "time_slots": ["شنبه 13:00-16:00", "شنبه 8:00-11:00", "دوشنبه 13:00-16:00", "دوشنبه 8:00-11:00"],
+              "exam_date": "1404/10/14",
+              "exam_time": "10:00-12:00"
+            },
+            {
+              "course_code": "55001",
+              "course_name": "ریاضی پیش‌دانشگاهی",
+              "credits": {"theoretical": 2, "practical": 0},
+              "instructor": "عبداللهی، علی یار کریمی",
+              "time_slots": ["دوشنبه 10:00-12:00", "دوشنبه 8:00-10:00", "چهارشنبه 8:00-10:00", "چهارشنبه 10:00-12:00"],
+              "exam_date": "1404/10/18",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "55002",
+              "course_name": "فیزیک پیش‌دانشگاهی",
+              "credits": {"theoretical": 2, "practical": 0},
+              "instructor": "خلیل حیدری، آل ابراهیم",
+              "time_slots": ["دوشنبه 8:00-10:00", "دوشنبه 10:00-12:00", "چهارشنبه 10:00-12:00", "چهارشنبه 8:00-10:00"],
+              "exam_date": "1404/10/22",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "55005",
+              "course_name": "آمار پیش‌دانشگاهی",
+              "credits": {"theoretical": 2, "practical": 0},
+              "instructor": "مهران عالی پور، اصلان میرهاشمی",
+              "time_slots": ["یکشنبه 13:00-15:00", "یکشنبه 10:00-12:00", "سه‌شنبه 13:00-15:00", "سه‌شنبه 10:00-12:00"],
+              "exam_date": "1404/10/16",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "55001",
+              "course_name": "زبان پیش‌دانشگاهی",
+              "credits": {"theoretical": 2, "practical": 0},
+              "instructor": "",
+              "time_slots": [],
+              "exam_date": "",
+              "exam_time": ""
+            }
+          ]
+        },
+        "2": {
+          "description": "ترم دو مهندسی کامپیوتر ورودی 1403",
+          "groups": ["G1", "G2", "G3"],
+          "courses": [
+            {
+              "course_code": "7000031538",
+              "course_name": "برنامه‌سازی پیشرفته",
+              "credits": {"theoretical": 2, "practical": 2},
+              "instructor": "پویا خسرویان",
+              "time_slots": ["سه‌شنبه 8:00-11:00", "دوشنبه 8:00-11:00", "یکشنبه 8:00-11:00"],
+              "exam_date": "1404/10/17",
+              "exam_time": "10:00-12:00"
+            },
+            {
+              "course_code": "7000031532",
+              "course_name": "فیزیک ۲",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "مردانی، ریاحی، سمیرا حسین زاده",
+              "time_slots": ["یکشنبه 8:00-11:00", "سه‌شنبه 13:00-16:00", "دوشنبه 8:00-11:00"],
+              "exam_date": "1404/10/14",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "7000031528",
+              "course_name": "ریاضی ۲",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "فتانه کریمی، فاضلی، عبداللهی",
+              "time_slots": ["سه‌شنبه 13:00-16:00", "یکشنبه 8:00-11:00", "سه‌شنبه 8:00-11:00"],
+              "exam_date": "1404/10/22",
+              "exam_time": "10:00-12:00"
+            },
+            {
+              "course_code": "7000031553",
+              "course_name": "کارگاه کامپیوتر",
+              "credits": {"theoretical": 0, "practical": 1},
+              "instructor": "زال احمدی",
+              "time_slots": ["یکشنبه 13:00-15:00", "یکشنبه 15:00-17:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "7000035094",
+              "course_name": "آشنایی با صنعت",
+              "credits": {"theoretical": 1, "practical": 1},
+              "instructor": "تاجی",
+              "time_slots": ["یکشنبه 15:00-17:00", "یکشنبه 13:00-15:00"],
+              "exam_date": "1404/10/21",
+              "exam_time": "13:00-14:30"
+            },
+            {
+              "course_code": "7000031536",
+              "course_name": "ریاضیات گسسته",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "کیومرثی",
+              "time_slots": ["شنبه 13:00-16:00", "دوشنبه 13:00-16:00"],
+              "exam_date": "1404/10/15",
+              "exam_time": "10:00-12:00"
+            },
+            {
+              "course_code": "7000031537",
+              "course_name": "مدار منطقی",
+              "credits": {"theoretical": 2, "practical": 1},
+              "instructor": "خدیجه قادری",
+              "time_slots": ["شنبه 8:00-11:00", "شنبه 13:00-16:00"],
+              "exam_date": "1404/10/19",
+              "exam_time": "10:00-12:00"
+            }
+          ]
+        }
+      }
+    },
+    "pre_1403": {
+      "description": "ورودی قبل از 1403",
+      "semesters": {
+        "1": {
+          "description": "ترم یک مهندسی کامپیوتر ورودی قبل از 1403",
+          "groups": ["G1", "G2", "G3", "G4"],
+          "courses": [
+            {
+              "course_code": "4628145941",
+              "course_name": "مبانی کامپیوتر و برنامه‌سازی",
+              "credits": {"theoretical": 2, "practical": 2},
+              "instructor": "توکلی، شاهینی",
+              "time_slots": ["شنبه 8:00-11:00", "شنبه 13:00-16:00", "دوشنبه 8:00-11:00", "دوشنبه 13:00-16:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628141460",
+              "course_name": "فیزیک ۱",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "",
+              "time_slots": ["یکشنبه 8:00-11:00", "یکشنبه 13:00-16:00", "سه‌شنبه 8:00-11:00", "سه‌شنبه 13:00-16:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628165140",
+              "course_name": "ریاضی ۱",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "",
+              "time_slots": ["شنبه 13:00-16:00", "شنبه 8:00-11:00", "دوشنبه 13:00-16:00"],
+              "exam_date": "",
+              "exam_time": ""
+            }
+          ]
+        },
+        "2": {
+          "description": "ترم دو مهندسی کامپیوتر ورودی قبل از 1403",
+          "groups": ["G1", "G2", "G3"],
+          "courses": [
+            {
+              "course_code": "4628111667",
+              "course_name": "برنامه‌سازی پیشرفته",
+              "credits": {"theoretical": 2, "practical": 2},
+              "instructor": "پویا خسرویان، خسرویان",
+              "time_slots": ["سه‌شنبه 8:00-11:00", "دوشنبه 8:00-11:00", "یکشنبه 8:00-11:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628141492",
+              "course_name": "فیزیک ۲",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "",
+              "time_slots": ["یکشنبه 8:00-11:00", "سه‌شنبه 13:00-16:00", "دوشنبه 8:00-11:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628129685",
+              "course_name": "ریاضی ۲",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "",
+              "time_slots": ["سه‌شنبه 13:00-16:00", "یکشنبه 8:00-11:00", "سه‌شنبه 8:00-11:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628160442",
+              "course_name": "کارگاه کامپیوتر",
+              "credits": {"theoretical": 0, "practical": 1},
+              "instructor": "زال احمدی",
+              "time_slots": ["یکشنبه 13:00-15:00", "یکشنبه 15:00-17:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628129880",
+              "course_name": "ریاضیات گسسته",
+              "credits": {"theoretical": 3, "practical": 0},
+              "instructor": "کیومرثی",
+              "time_slots": ["شنبه 13:00-16:00", "دوشنبه 13:00-16:00"],
+              "exam_date": "",
+              "exam_time": ""
+            },
+            {
+              "course_code": "4628147873",
+              "course_name": "مدار منطقی",
+              "credits": {"theoretical": 2, "practical": 1},
+              "instructor": "خدیجه قادری",
+              "time_slots": ["شنبه 8:00-11:00", "شنبه 13:00-16:00"],
+              "exam_date": "",
+              "exam_time": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  
+  "open_courses": {
+    "description": "دروس بدون محدودیت گروه (ترم 3 به بعد)",
+    "courses": [
+      {
+        "course_code": "معادلات_دیفرانسیل",
+        "course_name": "معادلات دیفرانسیل",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "طاهری، حقانی، سجادی",
+        "time_slots": ["چهارشنبه 14:00-17:00", "شنبه 13:00-16:00", "دوشنبه 13:00-16:00"],
+        "exam_date": "1404/10/24",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "ساختار_داده",
+        "course_name": "داده‌ساختارها و الگوریتم",
+        "credits": {"theoretical": 2, "practical": 2},
+        "instructor": "بهاری زاده",
+        "time_slots": ["شنبه 13:00-16:00", "دوشنبه 13:00-16:00", "سه‌شنبه 13:00-16:00"],
+        "exam_date": "1404/10/14",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "آمار_احتمالات",
+        "course_name": "آمار و احتمالات مهندسی",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "بنی هاشمی، مولوی",
+        "time_slots": ["یکشنبه 8:00-11:00", "یکشنبه 13:00-16:00"],
+        "exam_date": "1404/10/16",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "معماری_کامپیوتر",
+        "course_name": "معماری کامپیوتر",
+        "credits": {"theoretical": 2, "practical": 1},
+        "instructor": "خدیجه قادری",
+        "time_slots": ["سه‌شنبه 8:00-11:00", "دوشنبه 8:00-11:00", "چهارشنبه 8:00-11:00"],
+        "exam_date": "1404/10/19",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "مهارتهای_نرم",
+        "course_name": "مهارت‌های نرم شغلی",
+        "credits": {"theoretical": 2, "practical": 0},
+        "instructor": "فرهمند",
+        "time_slots": ["سه‌شنبه 15:00-17:00", "سه‌شنبه 13:00-15:00", "سه‌شنبه 11:00-13:00"],
+        "exam_date": "1404/10/21",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "کارآفرینی",
+        "course_name": "کارآفرینی",
+        "credits": {"theoretical": 2, "practical": 0},
+        "instructor": "",
+        "time_slots": ["چهارشنبه 8:00-11:00", "سه‌شنبه 8:00-11:00", "دوشنبه 8:00-11:00"],
+        "exam_date": "1404/10/24",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [3]
+      },
+      {
+        "course_code": "4628117515",
+        "course_name": "تحلیل و طراحی سیستم‌ها",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "نکیسا توکلی",
+        "time_slots": ["یکشنبه 8:00-11:00", "یکشنبه 13:00-16:00"],
+        "exam_date": "1404/10/16",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [4]
+      },
+      {
+        "course_code": "4628135313",
+        "course_name": "سیگنال‌ها و سیستم‌ها",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "نجمه امینی، حامد سقایی",
+        "time_slots": ["دوشنبه 8:00-11:00", "چهارشنبه 8:00-11:00"],
+        "exam_date": "1404/10/21",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [4]
+      },
+      {
+        "course_code": "4628137064",
+        "course_name": "طراحی الگوریتم‌ها",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "شاهینی",
+        "time_slots": ["یکشنبه 13:00-16:00", "یکشنبه 8:00-11:00"],
+        "exam_date": "1404/10/23",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [4]
+      },
+      {
+        "course_code": "4628153620",
+        "course_name": "نظریه زبان‌ها و ماشین‌ها",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "آذر رفیعی",
+        "time_slots": ["سه‌شنبه 13:00-16:00", "دوشنبه 13:00-16:00"],
+        "exam_date": "1404/10/25",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [4]
+      },
+      {
+        "course_code": "4628127605",
+        "course_name": "روش پژوهش و ارائه",
+        "credits": {"theoretical": 2, "practical": 0},
+        "instructor": "رضوی",
+        "time_slots": ["سه‌شنبه 16:00-18:00", "یکشنبه 16:00-18:00"],
+        "exam_date": "1404/10/17",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [4]
+      },
+      {
+        "course_code": "4628164737",
+        "course_name": "مهندسی نرم‌افزار ۱",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "نکیسا توکلی",
+        "time_slots": ["دوشنبه 8:00-11:00", "دوشنبه 13:00-16:00"],
+        "exam_date": "1404/10/21",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [5]
+      },
+      {
+        "course_code": "4628105622",
+        "course_name": "اصول و طراحی کامپایلر",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "آذر رفیعی",
+        "time_slots": ["سه‌شنبه 8:00-11:00", "دوشنبه 8:00-11:00"],
+        "exam_date": "1404/10/22",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [5]
+      },
+      {
+        "course_code": "4628114001",
+        "course_name": "پایگاه داده‌ها",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "پویا خسرویان",
+        "time_slots": ["شنبه 8:00-11:00", "چهارشنبه 8:00-11:00"],
+        "exam_date": "1404/10/15",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [5]
+      },
+      {
+        "course_code": "زبان_فنی",
+        "course_name": "زبان فنی",
+        "credits": {"theoretical": 2, "practical": 0},
+        "instructor": "پناهی، اسماعیل حسینی",
+        "time_slots": ["چهارشنبه 13:00-15:00", "یکشنبه 10:00-12:00"],
+        "exam_date": "1404/10/17",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [5]
+      },
+      {
+        "course_code": "4628155511",
+        "course_name": "هوش مصنوعی و سیستم‌های خبره",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "آذر رفیعی",
+        "time_slots": ["یکشنبه 8:00-11:00", "یکشنبه 13:00-16:00"],
+        "exam_date": "1404/10/18",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [5]
+      },
+      {
+        "course_code": "4628169362",
+        "course_name": "سیستم‌های عامل",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "اسکندری",
+        "time_slots": ["سه‌شنبه 13:00-16:00", "سه‌شنبه 8:00-11:00"],
+        "exam_date": "1404/10/16",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [6]
+      },
+      {
+        "course_code": "4628130341",
+        "course_name": "ریزپردازنده‌ها و زبان اسمبلی",
+        "credits": {"theoretical": 2, "practical": 1},
+        "instructor": "خدیجه قادری",
+        "time_slots": ["دوشنبه 13:00-16:00"],
+        "exam_date": "1404/10/21",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [6]
+      },
+      {
+        "course_code": "4628137355",
+        "course_name": "طراحی زبان‌های برنامه‌سازی",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "مهرداد رضوی",
+        "time_slots": ["یکشنبه 13:00-16:00"],
+        "exam_date": "1404/10/24",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [6]
+      },
+      {
+        "course_code": "4628135451",
+        "course_name": "شبکه‌های کامپیوتری",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "عباس شاهینی",
+        "time_slots": ["سه‌شنبه 13:00-16:00"],
+        "exam_date": "1404/10/18",
+        "exam_time": "13:00-14:30",
+        "target_semesters": [6]
+      },
+      {
+        "course_code": "4628143773",
+        "course_name": "مباحث ویژه ۱",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "رضوی",
+        "time_slots": ["شنبه 13:00-16:00"],
+        "exam_date": "1404/10/18",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [7, 8]
+      },
+      {
+        "course_code": "4628164395",
+        "course_name": "سیستم‌های نهفته و بی‌درنگ",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "علی بهاری زاده",
+        "time_slots": ["دوشنبه 16:00-17:30، سه‌شنبه 16:00-17:30", "شنبه 16:00-17:30، سه‌شنبه 13:00-14:30"],
+        "exam_date": "1404/10/22",
+        "exam_time": "10:00-12:00",
+        "target_semesters": [7, 8]
+      },
+      {
+        "course_code": "4628145172",
+        "course_name": "مبانی شبکه‌های بی‌سیم",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "عباس شاهینی",
+        "time_slots": ["سه‌شنبه 8:00-11:00", "چهارشنبه 8:00-11:00"],
+        "exam_date": "1404/10/25",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [7, 8]
+      },
+      {
+        "course_code": "4628151527",
+        "course_name": "مهندسی اینترنت",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "فرهمند",
+        "time_slots": ["پنج‌شنبه 13:00-16:00"],
+        "exam_date": "1404/10/14",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [8]
+      },
+      {
+        "course_code": "4628108189",
+        "course_name": "امنیت شبکه",
+        "credits": {"theoretical": 3, "practical": 0},
+        "instructor": "فرهمند",
+        "time_slots": ["پنج‌شنبه 8:00-11:00"],
+        "exam_date": "1404/10/16",
+        "exam_time": "8:00-10:00",
+        "target_semesters": [8]
+      }
+    ]
+  },
+
+  "general_courses": {
+    "description": "دروس عمومی - همه ارائه می‌شوند، LLM فقط پیشنهاد انتخاب می‌دهد",
+    "courses": [
+      {
+        "course_code": "90610",
+        "course_name": "اندیشه اسلامی ۱ (معاذ و معاد)",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "98841",
+        "course_name": "اندیشه اسلامی ۲ (نبوت و امامت)",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "98961",
+        "course_name": "اخلاق اسلامی (مبانی و مفاهیم)",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "99041",
+        "course_name": "تاریخ تحلیلی صدر اسلام",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "90755",
+        "course_name": "انقلاب اسلامی ایران",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "90763",
+        "course_name": "تفسیر موضوعی قرآن",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "معارف"
+      },
+      {
+        "course_code": "92381",
+        "course_name": "تاریخ فرهنگ و تمدن اسلام و ایران",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "*"
+      },
+      {
+        "course_code": "90128",
+        "course_name": "دانش خانواده و جمعیت",
+        "credits": {"theoretical": 2, "practical": 0},
+        "type": "*"
+      },
+      {
+        "course_code": "90029",
+        "course_name": "فارسی (فارسی عمومی)",
+        "credits": {"theoretical": 3, "practical": 0},
+        "type": "عمومی"
+      },
+      {
+        "course_code": "90180",
+        "course_name": "زبان خارجی (زبان عمومی)",
+        "credits": {"theoretical": 3, "practical": 0},
+        "type": "عمومی"
+      },
+      {
+        "course_code": "99079",
+        "course_name": "تربیت بدنی",
+        "credits": {"theoretical": 0, "practical": 1},
+        "type": "عمومی"
+      },
+      {
+        "course_code": "99062",
+        "course_name": "ورزش ۱",
+        "credits": {"theoretical": 1, "practical": 1},
+        "type": "عمومی"
+      },
+      {
+        "course_code": "99073",
+        "course_name": "اندیشه‌ها و وصایای امام خمینی",
+        "credits": {"theoretical": 1, "practical": 0},
+        "type": "عمومی"
+      },
+      {
+        "course_code": "99083",
+        "course_name": "انس با قرآن کریم",
+        "credits": {"theoretical": 1, "practical": 0},
+        "type": "عمومی"
+      }
+    ],
+    "rules": {
+      "total_required": "26 واحد دروس عمومی الزامی",
+      "معارف": "دانشجو باید حتما و فقط یک درس از گروه معارف اسلامی را انتخاب کند",
+      "special_rules": [
+        "درس انس با قرآن کریم از نیمسال اول سال تحصیلی 1400-1401 اجرا می‌شود",
+        "از درس گروه معارف اسلامی در هر نیمسال حتما و فقط یک درس باید انتخاب نمایند"
+      ]
+    }
+  },
+
+  "special_projects": [
+    {
+      "course_code": "4628183688",
+      "course_name": "پروژه نرم‌افزار",
+      "credits": {"theoretical": 0, "practical": 5},
+      "instructor": "کیومرثی، زمانی، خسرویان، رفیعی، علی بهاری زاده، خدیجه قادری",
+      "time_slots": ["انتخابی"],
+      "exam_date": "",
+      "exam_time": "",
+      "target_semesters": [8]
+    },
+    {
+      "course_code": "4628156372",
+      "course_name": "کارآموزی",
+      "credits": {"theoretical": 0, "practical": 5},
+      "instructor": "کیومرثی، زمانی، خسرویان، رفیعی، علی بهاری زاده، خدیجه قادری",
+      "time_slots": ["انتخابی"],
+      "exam_date": "",
+      "exam_time": "",
+      "target_semesters": [8]
+    }
+  ],
+
+  "semester_notes": [
+    "دانشجویان ترم اول و دوم فقط می‌توانند از دروس گروه خودشان انتخاب کنند",
+    "از ترم سوم به بعد محدودیت گروهی برداشته می‌شود",
+    "کلاس‌های حل تمرین همراه با درس اصلی اجباری است",
+    "برای کلاس‌های عملی و آزمایشگاهی حضور اجباری است",
+    "امکان حذف و اضافه تا پایان هفته اول کلاس‌ها وجود دارد",
+    "دروس عمومی برای تمام گروه‌ها قابل انتخاب است",
+    "حداکثر یک درس معارف در هر ترم قابل انتخاب است"
+    ]
+}
