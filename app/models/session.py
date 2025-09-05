@@ -69,7 +69,7 @@ class UserSession(Base):
             name="check_valid_expiration"
         ),
         CheckConstraint(
-            "current_step IN ('start', 'registration', 'waiting_student_info', 'waiting_grades', 'confirming_grades', 'waiting_preferences', 'showing_recommendation', 'completed')",
+            "current_step IN ('start', 'waiting_student_number', 'waiting_major_semester', 'confirming_registration', 'waiting_grades', 'confirming_grades', 'waiting_preferences', 'showing_recommendation', 'completed')",
             name="check_valid_step"
         ),
     )

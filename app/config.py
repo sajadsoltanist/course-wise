@@ -7,7 +7,7 @@ using Pydantic BaseSettings with proper validation and error handling.
 
 import os
 from typing import Optional
-from pydantic import Field, validator
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings
 from loguru import logger
 
@@ -51,6 +51,11 @@ class Settings(BaseSettings):
         description="Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)"
     )
     
+    log_file_path: Optional[str] = Field(
+        default=None,
+        description="Optional log file path for file logging"
+    )
+    
     # Database Pool Settings
     db_pool_size: int = Field(
         default=5,
@@ -81,7 +86,7 @@ class Settings(BaseSettings):
     )
     
     
-    @validator('log_level')
+    @field_validator('log_level')
     def validate_log_level(cls, v):
         """Validate log level is one of the supported levels."""
         valid_levels = ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']
@@ -89,7 +94,7 @@ class Settings(BaseSettings):
             raise ValueError(f'log_level must be one of: {", ".join(valid_levels)}')
         return v.upper()
     
-    @validator('telegram_bot_token')
+    @field_validator('telegram_bot_token')
     def validate_telegram_token(cls, v):
         """Validate Telegram bot token format."""
         if not v or len(v) < 40:
@@ -98,14 +103,14 @@ class Settings(BaseSettings):
             raise ValueError('Telegram bot token should contain a colon (:)')
         return v
     
-    @validator('openai_api_key')
+    @field_validator('openai_api_key')
     def validate_openai_key(cls, v):
         """Validate OpenAI API key format."""
         if not v or not v.startswith(('sk-', 'sk-proj-')):
             raise ValueError('OpenAI API key should start with "sk-" or "sk-proj-"')
         return v
     
-    @validator('database_url')
+    @field_validator('database_url')
     def validate_database_url(cls, v):
         """Validate database URL format."""
         if not v.startswith(('postgresql://', 'postgresql+asyncpg://')):
