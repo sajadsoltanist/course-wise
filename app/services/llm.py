@@ -935,8 +935,6 @@ Parse the following grade text from an Iranian university student. Extract cours
             
             # Load offerings file
             offerings_path = Path("data/offerings/mehr_1404_new.json")
-            if not offerings_path.exists():
-                offerings_path = Path("data/offerings/mehr_1404.json")
             
             if offerings_path.exists():
                 with open(offerings_path, 'r', encoding='utf-8') as f:
