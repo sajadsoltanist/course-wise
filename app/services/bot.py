@@ -1,12 +1,8 @@
-"""
-Simplified Telegram bot service for CourseWise.
-
-Manages bot lifecycle with single-step recommendation flow.
-"""
+"""Telegram bot service for CourseWise."""
 
 import asyncio
 from typing import Optional
-from telegram import Update, Bot
+from telegram import Update
 from telegram.ext import Application, ContextTypes
 from telegram.constants import ParseMode
 from loguru import logger
@@ -35,6 +31,9 @@ class CourseWiseBot:
             # Create bot application
             self.application = Application.builder().token(settings.telegram_bot_token).build()
             
+            # Setup bot menu
+            await self._setup_bot_menu()
+            
             # Register handlers
             self._register_handlers()
             
@@ -44,6 +43,25 @@ class CourseWiseBot:
             logger.error(f"Failed to initialize bot: {e}")
             raise
     
+    async def _setup_bot_menu(self) -> None:
+        """Setup bot menu commands"""
+        from telegram import BotCommand
+        
+        try:
+            commands = [
+                BotCommand("start", "شروع کار با بات و پیشنهاد دروس"),
+                BotCommand("recommend", "پیشنهاد دروس جدید"),
+                BotCommand("curriculum", "چارت درسی"),
+                BotCommand("ita", "کانال ایتا رشته"),
+                BotCommand("help", "راهنمای استفاده")
+            ]
+            
+            await self.application.bot.set_my_commands(commands)
+            logger.info("Bot menu commands configured")
+            
+        except Exception as e:
+            logger.error(f"Failed to setup bot menu: {e}")
+    
     def _register_handlers(self) -> None:
         """Register bot command and conversation handlers."""
         
@@ -51,6 +69,12 @@ class CourseWiseBot:
             raise RuntimeError("Application not initialized")
         
         try:
+            # Add menu command handlers first (higher priority)
+            from app.handlers.menu_commands import get_menu_command_handlers
+            menu_handlers = get_menu_command_handlers()
+            for handler in menu_handlers:
+                self.application.add_handler(handler)
+            
             # Add the simplified conversation handler
             conversation_handler = create_conversation_handler()
             self.application.add_handler(conversation_handler)

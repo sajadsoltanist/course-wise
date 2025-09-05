@@ -89,6 +89,7 @@ class SimpleFlowHandler:
         """Handle /recommend command - same as start"""
         return await self.start_command(update, context)
     
+    
     async def process_grades_input(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
         """Process the complete input and generate recommendations"""
         
@@ -96,9 +97,7 @@ class SimpleFlowHandler:
         user_input = update.message.text
         
         try:
-            # Parse user input to extract info
             parsed_info = self._parse_user_input(user_input)
-            logger.info(f"Parsed user input: {parsed_info}")
             
             if not parsed_info["valid"]:
                 await update.message.reply_text(
@@ -112,16 +111,13 @@ class SimpleFlowHandler:
                 )
                 return WAITING_FOR_GRADES
             
-            # Update student info in database
             await self._update_student_info(user_id, parsed_info)
             
-            # Show processing message
             processing_msg = await update.message.reply_text(
                 "🔄 در حال تحلیل نمرات و آماده کردن پیشنهادات...\n"
                 "این کار ممکنه چند ثانیه طول بکشه."
             )
             
-            # Get recommendation from LLM
             recommendation = await self.recommendation_service.get_recommendation(
                 student_entry_year=int(parsed_info["entry_year"]),
                 current_semester=parsed_info["current_semester"], 
@@ -129,8 +125,6 @@ class SimpleFlowHandler:
                 last_semester_gpa=parsed_info["last_semester_gpa"],
                 overall_gpa=parsed_info["overall_gpa"]
             )
-            
-            # Delete processing message
             await processing_msg.delete()
             
             if recommendation.get("success"):
@@ -246,16 +240,13 @@ class SimpleFlowHandler:
                 
         except Exception as e:
             logger.error(f"Failed to update student info: {e}")
-            # Don't fail the whole process for this
     
     async def _send_recommendations(self, update: Update, recommendation: dict):
-        """Send formatted recommendations to user"""
         
         try:
             rec_data = recommendation.get("recommendations", {})
             metadata = recommendation.get("metadata", {})
             
-            # Header message
             header = f"✅ **پیشنهادات درسی**\n\n"
             header += f"📊 **اطلاعات دانشجو:**\n"
             header += f"• ورودی: {metadata.get('entry_year', 'نامشخص')}\n"
@@ -273,11 +264,44 @@ class SimpleFlowHandler:
             # Course recommendations
             courses = rec_data.get("courses", [])
             if courses:
-                header += f"🎯 **دروس پیشنهادی:**\n"
-                for course in courses[:8]:  # حداکثر 8 درس
+                header += f"🎯 **دروس پیشنهادی:**\n\n"
+                for i, course in enumerate(courses[:8]):  # حداکثر 8 درس
                     header += f"• **{course.get('course_name', '')}** ({course.get('course_code', '')})\n"
+                    
+                    # اضافه کردن اطلاعات تکمیلی
+                    details = []
+                    
+                    # روز و زمان کلاس
+                    time_slots = course.get('time_slots', [])
+                    if time_slots and time_slots[0] != 'نامشخص':
+                        # فقط اولین time_slot رو نشون میدیم تا پیام طولانی نشه
+                        details.append(f"📅 {time_slots[0]}")
+                    
+                    # استاد
+                    instructor = course.get('instructor', '')
+                    if instructor and instructor != 'نامشخص' and instructor.strip():
+                        # کوتاه کردن نام استاد اگه خیلی طولانی باشه
+                        if len(instructor) > 20:
+                            instructor = instructor[:17] + "..."
+                        details.append(f"👨‍🏫 استاد {instructor}")
+                    
+                    # تاریخ امتحان
+                    exam_date = course.get('exam_date', '')
+                    if exam_date and exam_date.strip():
+                        details.append(f"📝 امتحان: {exam_date}")
+                    
+                    # نمایش جزئیات در صورت وجود
+                    if details:
+                        header += f"  🔹 {' | '.join(details)}\n"
+                    
+                    # دلیل پیشنهاد
                     if course.get('reason'):
                         header += f"  ↳ {course['reason']}\n"
+                    
+                    # خط جداکننده بین دروس (به جز آخری)
+                    if i < len(courses[:8]) - 1:
+                        header += f"  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    
                 header += "\n"
             
             # Analysis
@@ -287,10 +311,9 @@ class SimpleFlowHandler:
             
             header += f"💡 **نکته:** این پیشنهادات بر اساس تحلیل هوشمند ارائه شده. حتماً با مشاور دانشکده نیز مشورت کنید."
             
-            # Send with action buttons
+            # Send with back to menu button
             keyboard = [
-                [InlineKeyboardButton("🔄 پیشنهاد جدید", callback_data="new_recommendation")],
-                [InlineKeyboardButton("📋 راهنمای انتخاب واحد", callback_data="help_guide")]
+                [InlineKeyboardButton("🔙 بازگشت به منو", callback_data="back_to_menu")]
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
             
@@ -349,9 +372,11 @@ def create_conversation_handler() -> ConversationHandler:
     
     return ConversationHandler(
         entry_points=[
-            CommandHandler("start", handler.start_command),
             CommandHandler("recommend", handler.recommend_command),
         ],
+        map_to_parent={
+            # Allow external entry to WAITING_FOR_GRADES state
+        },
         states={
             WAITING_FOR_GRADES: [
                 MessageHandler(filters.TEXT & ~filters.COMMAND, handler.process_grades_input)
