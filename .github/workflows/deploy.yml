@@ -48,12 +48,12 @@ jobs:
           docker pull ghcr.io/${{ github.repository }}:latest
           
           # Stop existing containers
-          docker compose down
+          docker compose -f docker-compose.prod.yml down
           
           # Start new containers
-          docker compose up -d
+          docker compose -f docker-compose.prod.yml up -d
           
           # Show logs
-          docker compose logs --tail=50
+          docker compose -f docker-compose.prod.yml logs --tail=50
           
           echo "🎉 Deployment completed successfully!"
