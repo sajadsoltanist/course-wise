@@ -33,9 +33,27 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SERVER_PORT }}
         script: |
+          echo "🔄 Starting deployment..."
+          
+          # Login to GitHub Container Registry on server
+          echo '${{ secrets.GH_PAT }}' | docker login ghcr.io -u '${{ github.actor }}' --password-stdin
+          
+          # Navigate to application directory
           cd /opt/course-wise
+          
+          # Pull latest code
           git pull origin main
+          
+          # Pull latest image
           docker pull ghcr.io/${{ github.repository }}:latest
+          
+          # Stop existing containers
           docker compose down
+          
+          # Start new containers
           docker compose up -d
+          
+          # Show logs
           docker compose logs --tail=50
+          
+          echo "🎉 Deployment completed successfully!"
