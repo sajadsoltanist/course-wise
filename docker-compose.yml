@@ -12,7 +12,6 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U coursewise -d coursewise"]
       interval: 10s
@@ -21,7 +20,21 @@ services:
     networks:
       - coursewise-network
 
-  # Optional: pgAdmin for database management
+  bot:
+    image: ghcr.io/sajadsoltanist/course-wise:latest
+    container_name: coursewise-bot
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://coursewise:coursewise@postgres:5432/coursewise
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - coursewise-network
+
+  # Optional: pgAdmin for database management  
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: coursewise-pgadmin
