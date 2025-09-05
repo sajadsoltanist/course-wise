@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+venv/
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose*.yml
+.dockerignore
+docs/
+file_id_bot.py
+CLAUDE.md
