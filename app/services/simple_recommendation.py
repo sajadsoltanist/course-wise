@@ -87,10 +87,16 @@ class SimpleRecommendationService:
                 logger.warning("LLM recommendation failed, using fallback")
                 return self._create_fallback_response()
             
-            # 5. Structure response
+            # 5. Enrich courses with offerings data
+            enriched_recommendations = self._enrich_courses_with_offerings(
+                response.get("recommendations", {}), 
+                target_semester
+            )
+            
+            # 6. Structure response
             return {
                 "success": True,
-                "recommendations": response.get("recommendations", {}),
+                "recommendations": enriched_recommendations,
                 "metadata": {
                     "entry_year": student_entry_year,
                     "current_semester": current_semester,
@@ -335,6 +341,99 @@ class SimpleRecommendationService:
             text += "\n"
         
         return text
+    
+    def _enrich_courses_with_offerings(self, recommendations: Dict[str, Any], target_semester: str) -> Dict[str, Any]:
+        """Enrich LLM course recommendations with detailed info from offerings"""
+        
+        try:
+            # Load offerings data
+            offerings_path = self.data_path / "offerings" / f"{target_semester}_new.json"
+            if not offerings_path.exists():
+                offerings_path = self.data_path / "offerings" / f"{target_semester}.json"
+            
+            if not offerings_path.exists():
+                logger.warning(f"Offerings file not found: {target_semester}")
+                return recommendations
+            
+            with open(offerings_path, 'r', encoding='utf-8') as f:
+                offerings = json.load(f)
+            
+            # Get courses from recommendations
+            courses = recommendations.get("courses", [])
+            if isinstance(courses, list) and courses:
+                enriched_courses = []
+                
+                for course in courses:
+                    course_code = course.get("course_code", "")
+                    if course_code:
+                        # Find course in offerings
+                        course_details = self._find_course_in_offerings_data(course_code, offerings)
+                        
+                        # Merge LLM data with offerings data
+                        enriched_course = {
+                            "course_code": course_code,
+                            "course_name": course_details.get("course_name", course.get("course_name", f"درس {course_code}")),
+                            "credits": course_details.get("credits", course.get("credits", {"theoretical": 3, "practical": 0})),
+                            "time_slots": course_details.get("time_slots", []),
+                            "instructor": course_details.get("instructor", ""),
+                            "exam_date": course_details.get("exam_date", ""),
+                            "exam_time": course_details.get("exam_time", ""),
+                            "reason": course.get("reason", ""),
+                            "type": course.get("type", ""),
+                            "priority": course.get("priority", "")
+                        }
+                        enriched_courses.append(enriched_course)
+                    else:
+                        # Keep original if no course code
+                        enriched_courses.append(course)
+                
+                recommendations["courses"] = enriched_courses
+                logger.info(f"Enriched {len(enriched_courses)} courses with offerings data")
+            
+            return recommendations
+            
+        except Exception as e:
+            logger.error(f"Error enriching courses with offerings: {e}")
+            return recommendations
+    
+    def _find_course_in_offerings_data(self, course_code: str, offerings: Dict) -> Dict[str, Any]:
+        """Find course information in offerings data structure"""
+        
+        try:
+            # Search in all sections of offerings
+            def search_in_courses_list(courses_list):
+                for course in courses_list:
+                    if course.get('course_code') == course_code:
+                        return course
+                return None
+            
+            # Search in entry year groups
+            for entry_year, entry_data in offerings.get("entry_year_groups", {}).items():
+                for semester_num, semester_data in entry_data.get("semesters", {}).items():
+                    found = search_in_courses_list(semester_data.get("courses", []))
+                    if found:
+                        return found
+            
+            # Search in open courses
+            found = search_in_courses_list(offerings.get("open_courses", {}).get("courses", []))
+            if found:
+                return found
+            
+            # Search in general courses
+            found = search_in_courses_list(offerings.get("general_courses", {}).get("courses", []))
+            if found:
+                return found
+            
+            # Search in special projects
+            found = search_in_courses_list(offerings.get("special_projects", []))
+            if found:
+                return found
+            
+            return {}  # Not found
+            
+        except Exception as e:
+            logger.error(f"Error searching for course {course_code}: {e}")
+            return {}
     
     def _create_recommendation_prompt(
         self,

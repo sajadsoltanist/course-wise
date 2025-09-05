@@ -848,11 +848,20 @@ Parse the following grade text from an Iranian university student. Extract cours
             analysis["strengths"].append("All recommended courses are available")
         
         # Check credit distribution
-        total_credits = recommendations.get("summary", {}).get("total_credits", 0)
-        if 12 <= total_credits <= 24:
-            analysis["strengths"].append(f"Appropriate credit count: {total_credits}")
-        else:
-            analysis["issues"].append(f"Credit count may be inappropriate: {total_credits}")
+        total_credits_raw = recommendations.get("summary", {}).get("total_credits", 0)
+        try:
+            # Convert to int if it's a string
+            if isinstance(total_credits_raw, str):
+                total_credits = int(total_credits_raw.split()[0]) if total_credits_raw.split() else 0
+            else:
+                total_credits = int(total_credits_raw) if total_credits_raw else 0
+            
+            if 12 <= total_credits <= 24:
+                analysis["strengths"].append(f"Appropriate credit count: {total_credits}")
+            else:
+                analysis["issues"].append(f"Credit count may be inappropriate: {total_credits}")
+        except (ValueError, IndexError, TypeError):
+            analysis["issues"].append("Could not determine credit count")
         
         # Check daily distribution
         weekly_schedule = recommendations.get("weekly_schedule", {})
@@ -899,12 +908,16 @@ Parse the following grade text from an Iranian university student. Extract cours
                     
                     # Add if not already in list
                     if not any(c.get('course_code') == match for c in courses):
+                        # Try to find course info from offerings
+                        course_info = self._find_course_in_offerings(match)
+                        
                         courses.append({
                             'course_code': match,
-                            'course_name': f'درس {match}',  # Default name
-                            'credits': 3,  # Default credits
-                            'time_slots': ['نامشخص'],
-                            'instructor': 'نامشخص'
+                            'course_name': course_info.get('course_name', f'درس {match}'),
+                            'credits': course_info.get('credits', {'theoretical': 3, 'practical': 0}),
+                            'time_slots': course_info.get('time_slots', ['نامشخص']),
+                            'instructor': course_info.get('instructor', 'نامشخص'),
+                            'exam_date': course_info.get('exam_date', '')
                         })
             
             logger.debug(f"Fallback extraction found {len(courses)} courses")
@@ -913,6 +926,51 @@ Parse the following grade text from an Iranian university student. Extract cours
         except Exception as e:
             logger.error(f"Error in fallback course extraction: {e}")
             return []
+    
+    def _find_course_in_offerings(self, course_code: str) -> Dict[str, Any]:
+        """Find course information from offerings data"""
+        try:
+            from pathlib import Path
+            import json
+            
+            # Load offerings file
+            offerings_path = Path("data/offerings/mehr_1404_new.json")
+            if not offerings_path.exists():
+                offerings_path = Path("data/offerings/mehr_1404.json")
+            
+            if offerings_path.exists():
+                with open(offerings_path, 'r', encoding='utf-8') as f:
+                    offerings = json.load(f)
+                
+                # Search in all sections of offerings
+                def search_in_courses(courses_list):
+                    for course in courses_list:
+                        if course.get('course_code') == course_code:
+                            return course
+                    return None
+                
+                # Search in entry year groups
+                for entry_year, entry_data in offerings.get("entry_year_groups", {}).items():
+                    for semester_num, semester_data in entry_data.get("semesters", {}).items():
+                        found = search_in_courses(semester_data.get("courses", []))
+                        if found:
+                            return found
+                
+                # Search in open courses
+                found = search_in_courses(offerings.get("open_courses", {}).get("courses", []))
+                if found:
+                    return found
+                
+                # Search in general courses
+                found = search_in_courses(offerings.get("general_courses", {}).get("courses", []))
+                if found:
+                    return found
+            
+            return {}  # Not found
+            
+        except Exception as e:
+            logger.error(f"Error searching course in offerings: {e}")
+            return {}
 
     async def health_check(self) -> bool:
         """
