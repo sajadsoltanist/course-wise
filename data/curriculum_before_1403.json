@@ -1,6 +1,6 @@
 {
   "entry_years": ["1393", "1394", "1395", "1396", "1397", "1398", "1399", "1400", "1401", "1402"],
-  "description": "چارت درسی مهندسی کامپیوتر گرایش نرم‌افزار ورودی قبل از 1403",
+  "description": "چارت درسی مهندسی کامپیوتر گرایش نرم‌افزار ورودی 1393 به بعد (قبل از 1403)",
   "total_credits_required": 152,
   "minimum_gpa": 12.0,
   
@@ -20,7 +20,7 @@
           "corequisites": []
         },
         {
-          "course_code": "55002",
+          "course_code": "MATH_PRE",
           "course_name": "ریاضی پیش‌دانشگاهی",
           "theoretical_credits": 2,
           "practical_credits": 0,
@@ -31,7 +31,7 @@
           "conditional": true
         },
         {
-          "course_code": "55001",
+          "course_code": "ENG_PRE",
           "course_name": "زبان خارجی پیش‌دانشگاهی",
           "theoretical_credits": 2,
           "practical_credits": 0,
@@ -42,7 +42,7 @@
           "conditional": true
         },
         {
-          "course_code": "55005",
+          "course_code": "PHYS_PRE",
           "course_name": "فیزیک پیش‌دانشگاهی",
           "theoretical_credits": 2,
           "practical_credits": 0,
@@ -53,7 +53,18 @@
           "conditional": true
         },
         {
-          "course_code": "90029",
+          "course_code": "FARSI_PRE",
+          "course_name": "فارسی پیش‌دانشگاهی",
+          "theoretical_credits": 2,
+          "practical_credits": 0,
+          "course_type": "general",
+          "is_mandatory": false,
+          "prerequisites": [],
+          "corequisites": [],
+          "conditional": true
+        },
+        {
+          "course_code": "FARSI_GEN",
           "course_name": "زبان فارسی",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -64,7 +75,7 @@
         },
         {
           "course_code": "MATH101",
-          "course_name": "ریاضی عمومی 1",
+          "course_name": "ریاضی عمومی ۱",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "foundation",
@@ -74,28 +85,16 @@
         },
         {
           "course_code": "PHYS101",
-          "course_name": "فیزیک 1",
+          "course_name": "فیزیک ۱",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "foundation",
           "is_mandatory": true,
           "prerequisites": [],
           "corequisites": []
-        },
-        {
-          "course_code": "55003",
-          "course_name": "فارسی پیش‌دانشگاهی",
-          "theoretical_credits": 2,
-          "practical_credits": 0,
-          "course_type": "general",
-          "is_mandatory": false,
-          "prerequisites": [],
-          "corequisites": [],
-          "conditional": true
         }
       ]
     },
-    
     "2": {
       "semester_name": "ترم دوم",
       "total_credits": 20,
@@ -122,17 +121,7 @@
         },
         {
           "course_code": "PHYS102",
-          "course_name": "فیزیک 2",
-          "theoretical_credits": 3,
-          "practical_credits": 0,
-          "course_type": "foundation",
-          "is_mandatory": true,
-          "prerequisites": ["PHYS101"],
-          "corequisites": []
-        },
-        {
-          "course_code": "MATH102",
-          "course_name": "ریاضی عمومی 2",
+          "course_name": "فیزیک ۲",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "foundation",
@@ -141,7 +130,17 @@
           "corequisites": []
         },
         {
-          "course_code": "MATH201",
+          "course_code": "MATH102",
+          "course_name": "ریاضی عمومی ۲",
+          "theoretical_credits": 3,
+          "practical_credits": 0,
+          "course_type": "foundation",
+          "is_mandatory": true,
+          "prerequisites": ["MATH101"],
+          "corequisites": []
+        },
+        {
+          "course_code": "MATH104",
           "course_name": "معادلات دیفرانسیل",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -151,7 +150,7 @@
           "corequisites": []
         },
         {
-          "course_code": "CS103",
+          "course_code": "CS_LAB",
           "course_name": "کارگاه کامپیوتر",
           "theoretical_credits": 0,
           "practical_credits": 1,
@@ -171,9 +170,9 @@
           "corequisites": []
         },
         {
-          "course_code": "99079",
-          "course_name": "تربیت بدنی",
-          "theoretical_credits": 1,
+          "course_code": "PE101",
+          "course_name": "تربیت بدنی ۱",
+          "theoretical_credits": 0.5,
           "practical_credits": 0.5,
           "course_type": "general",
           "is_mandatory": true,
@@ -182,14 +181,13 @@
         }
       ]
     },
-    
     "3": {
       "semester_name": "ترم سوم",
       "total_credits": 20,
       "courses": [
         {
           "course_code": "CS201",
-          "course_name": "ساختمان داده",
+          "course_name": "ساختمان داده‌ها",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
@@ -204,12 +202,12 @@
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["MATH201"],
+          "prerequisites": ["MATH104"],
           "corequisites": []
         },
         {
-          "course_code": "PHYS102_LAB",
-          "course_name": "آزمایشگاه فیزیک 2",
+          "course_code": "PHYS_LAB",
+          "course_name": "آزمایشگاه فیزیک ۲",
           "theoretical_credits": 0,
           "practical_credits": 1,
           "course_type": "foundation",
@@ -218,13 +216,13 @@
           "corequisites": []
         },
         {
-          "course_code": "MATH301",
+          "course_code": "MATH201",
           "course_name": "ریاضیات مهندسی",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["MATH102", "MATH201"],
+          "prerequisites": ["MATH102", "MATH104"],
           "corequisites": []
         },
         {
@@ -248,40 +246,37 @@
           "corequisites": []
         },
         {
-          "course_code": "99080",
-          "course_name": "ورزش 1",
+          "course_code": "PE102",
+          "course_name": "ورزش ۱",
           "theoretical_credits": 0,
           "practical_credits": 1,
           "course_type": "general",
           "is_mandatory": true,
-          "prerequisites": ["99079"],
+          "prerequisites": [],
           "corequisites": []
         },
         {
-          "course_code": "91004",
+          "course_code": "ISL101",
           "course_name": "تفسیر موضوعی قرآن",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         },
         {
-          "course_code": "90755",
+          "course_code": "ISL102",
           "course_name": "تاریخ تحلیلی صدر اسلام",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         }
       ]
     },
-    
     "4": {
       "semester_name": "ترم چهارم",
       "total_credits": 20,
@@ -293,22 +288,21 @@
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["MATH301"],
+          "prerequisites": ["MATH201"],
           "corequisites": []
         },
         {
-          "course_code": "91003",
+          "course_code": "ISL103",
           "course_name": "انس با قرآن",
           "theoretical_credits": 1,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         },
         {
-          "course_code": "CS302",
+          "course_code": "CS301",
           "course_name": "طراحی الگوریتم‌ها",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -318,7 +312,7 @@
           "corequisites": []
         },
         {
-          "course_code": "CS202",
+          "course_code": "CS302",
           "course_name": "مدارهای منطقی",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -348,7 +342,7 @@
           "corequisites": []
         },
         {
-          "course_code": "CS401",
+          "course_code": "SE201",
           "course_name": "تحلیل و طراحی سیستم‌ها",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -358,35 +352,33 @@
           "corequisites": []
         },
         {
-          "course_code": "90610",
-          "course_name": "اندیشه اسلامی 1",
+          "course_code": "ISL201",
+          "course_name": "اندیشه اسلامی ۱",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         }
       ]
     },
-    
     "5": {
       "semester_name": "ترم پنجم",
       "total_credits": 19,
       "courses": [
         {
-          "course_code": "CS301",
+          "course_code": "CS401",
           "course_name": "معماری کامپیوتر",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS202"],
+          "prerequisites": ["CS302"],
           "corequisites": []
         },
         {
-          "course_code": "CS403",
+          "course_code": "CS402",
           "course_name": "هوش مصنوعی و سیستم‌های خبره",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -396,8 +388,8 @@
           "corequisites": []
         },
         {
-          "course_code": "CS501",
-          "course_name": "پایگاه داده",
+          "course_code": "DB301",
+          "course_name": "پایگاه داده‌ها",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
@@ -406,7 +398,7 @@
           "corequisites": []
         },
         {
-          "course_code": "CS402",
+          "course_code": "CS403",
           "course_name": "اصول طراحی کامپایلر",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -416,28 +408,27 @@
           "corequisites": []
         },
         {
-          "course_code": "CS502",
+          "course_code": "SE301",
           "course_name": "مهندسی نرم‌افزار",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
           "is_mandatory": true,
-          "prerequisites": ["CS401"],
+          "prerequisites": ["SE201"],
           "corequisites": []
         },
         {
-          "course_code": "90615",
-          "course_name": "اندیشه اسلامی 2",
+          "course_code": "ISL202",
+          "course_name": "اندیشه اسلامی ۲",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         },
         {
-          "course_code": "90005",
+          "course_code": "GEN301",
           "course_name": "دانش خانواده و جمعیت",
           "theoretical_credits": 2,
           "practical_credits": 0,
@@ -448,39 +439,38 @@
         }
       ]
     },
-    
     "6": {
       "semester_name": "ترم ششم",
       "total_credits": 18,
       "courses": [
         {
-          "course_code": "CS301_LAB",
+          "course_code": "CS_ARCH_LAB",
           "course_name": "آزمایشگاه مدارهای منطقی و معماری کامپیوتر",
           "theoretical_credits": 0,
           "practical_credits": 1,
-          "course_type": "core",
+          "course_type": "specialized",
           "is_mandatory": true,
-          "prerequisites": ["CS202", "CS301"],
+          "prerequisites": ["CS302", "CS401"],
           "corequisites": []
         },
         {
-          "course_code": "CS601",
+          "course_code": "CS501",
           "course_name": "سیستم‌های عامل",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS301", "CS201"],
+          "prerequisites": ["CS401", "CS201"],
           "corequisites": []
         },
         {
-          "course_code": "CS602",
+          "course_code": "CS502",
           "course_name": "ریزپردازنده و زبان اسمبلی",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS301"],
+          "prerequisites": ["CS401"],
           "corequisites": []
         },
         {
@@ -490,21 +480,21 @@
           "practical_credits": 0,
           "course_type": "specialized",
           "is_mandatory": true,
-          "prerequisites": ["CS402"],
+          "prerequisites": ["CS403"],
           "corequisites": []
         },
         {
-          "course_code": "CS603",
+          "course_code": "CS504",
           "course_name": "طراحی کامپیوتری سیستم‌های دیجیتال",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS301"],
+          "prerequisites": ["CS401"],
           "corequisites": []
         },
         {
-          "course_code": "EE302",
+          "course_code": "COMM301",
           "course_name": "انتقال داده",
           "theoretical_credits": 3,
           "practical_credits": 0,
@@ -512,364 +502,442 @@
           "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول شماره 4"
+          "note": "مطابق جدول شماره ۴"
         },
         {
-          "course_code": "90630",
+          "course_code": "ISL301",
           "course_name": "اخلاق اسلامی",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         }
       ]
     },
-    
     "7": {
       "semester_name": "ترم هفتم",
       "total_credits": 17,
       "courses": [
         {
-          "course_code": "CS701",
+          "course_code": "NET401",
           "course_name": "شبکه‌های کامپیوتری",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS601"],
+          "prerequisites": ["CS501"],
           "corequisites": []
         },
         {
-          "course_code": "CS601_LAB",
-          "course_name": "آزمایشگاه سیستم‌عامل",
+          "course_code": "CS_OS_LAB",
+          "course_name": "آزمایشگاه سیستم‌های عامل",
           "theoretical_credits": 0,
           "practical_credits": 1,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS601"],
+          "prerequisites": ["CS501"],
           "corequisites": []
         },
         {
-          "course_code": "CS602_LAB",
+          "course_code": "CS_MPU_LAB",
           "course_name": "آزمایشگاه ریزپردازنده",
           "theoretical_credits": 0,
           "practical_credits": 1,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS602"],
+          "prerequisites": ["CS502"],
           "corequisites": []
         },
         {
-          "course_code": "CS801",
-          "course_name": "مباحث ویژه 1",
+          "course_code": "ELEC501",
+          "course_name": "مباحث ویژه ۱",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "elective",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 5"
+          "note": "مطابق جدول ۵"
         },
         {
-          "course_code": "CS702",
+          "course_code": "WIRELESS301",
           "course_name": "مبانی شبکه‌های بی‌سیم",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 4"
+          "note": "مطابق جدول ۴"
         },
         {
-          "course_code": "CS703",
+          "course_code": "EMBED301",
           "course_name": "سیستم‌های نهفته و بی‌درنگ",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 4"
+          "note": "مطابق جدول ۴"
         },
         {
-          "course_code": "90620",
+          "course_code": "ISL401",
           "course_name": "انقلاب اسلامی",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         },
         {
-          "course_code": "91006",
+          "course_code": "ISL402",
           "course_name": "وصیت‌نامه امام خمینی",
           "theoretical_credits": 1,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         }
       ]
     },
-    
     "8": {
       "semester_name": "ترم هشتم",
       "total_credits": 19,
       "courses": [
         {
-          "course_code": "CS701_LAB",
+          "course_code": "CS_NET_LAB",
           "course_name": "آزمایشگاه شبکه‌های کامپیوتر",
           "theoretical_credits": 0,
           "practical_credits": 1,
           "course_type": "core",
           "is_mandatory": true,
-          "prerequisites": ["CS701"],
+          "prerequisites": ["NET401"],
           "corequisites": []
         },
         {
-          "course_code": "CS801",
+          "course_code": "NET501",
           "course_name": "مهندسی اینترنت",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
           "is_mandatory": true,
-          "prerequisites": ["CS501", "CS701"],
+          "prerequisites": ["DB301", "NET401"],
           "corequisites": []
         },
         {
-          "course_code": "CS802",
+          "course_code": "DEFENSE301",
           "course_name": "مبانی دفاع مقدس",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "elective",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 5"
+          "note": "مطابق جدول ۵"
         },
         {
-          "course_code": "CS803",
+          "course_code": "SEC401",
           "course_name": "امنیت شبکه",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "specialized",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 4"
+          "note": "مطابق جدول ۴"
         },
         {
-          "course_code": "CS804",
-          "course_name": "مباحث ویژه 2",
+          "course_code": "ELEC502",
+          "course_name": "مباحث ویژه ۲",
           "theoretical_credits": 3,
           "practical_credits": 0,
           "course_type": "elective",
-          "is_mandatory": false,
+          "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "مطابق جدول 5"
+          "note": "مطابق جدول ۵"
         },
         {
-          "course_code": "90635",
+          "course_code": "ISL501",
           "course_name": "تاریخ فرهنگ و تمدن اسلامی",
           "theoretical_credits": 2,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         },
         {
-          "course_code": "CS901",
+          "course_code": "INTERN401",
           "course_name": "کارآموزی",
-          "theoretical_credits": 0,
-          "practical_credits": 1,
+          "theoretical_credits": 1,
+          "practical_credits": 0,
           "course_type": "specialized",
           "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "بعد از 80 واحد"
+          "note": "بعد از ۸۰ واحد"
         },
         {
-          "course_code": "CS902",
+          "course_code": "PROJ401",
           "course_name": "پروژه",
-          "theoretical_credits": 0,
-          "practical_credits": 3,
+          "theoretical_credits": 3,
+          "practical_credits": 0,
           "course_type": "specialized",
           "is_mandatory": true,
           "prerequisites": [],
           "corequisites": [],
-          "note": "بعد از 100 واحد"
+          "note": "بعد از ۱۰۰ واحد"
         },
         {
-          "course_code": "91003_2",
+          "course_code": "ISL502",
           "course_name": "انس با قرآن",
           "theoretical_credits": 1,
           "practical_credits": 0,
           "course_type": "general",
           "is_mandatory": true,
           "prerequisites": [],
-          "corequisites": [],
-          "category": "religious_course"
+          "corequisites": []
         }
       ]
     }
   },
   
-  "course_categories": {
-    "pre_university": {
-      "description": "دروس پیش‌دانشگاهی",
-      "note": "اخذ 8 واحد از دروس فوق الزامی است",
-      "required_credits": 8,
-      "courses": [
-        "55002", "55001", "55005", "55003", "55004", "55006"
-      ]
-    },
-    
-    "foundation": {
-      "description": "دروس پایه",
-      "total_credits": 20,
-      "courses": [
-        "MATH101", "MATH102", "PHYS101", "PHYS102", 
-        "STAT101", "MATH201", "CS103", "PHYS102_LAB"
-      ]
-    },
-    
-    "core": {
-      "description": "دروس اصلی",
-      "total_credits": 59,
-      "courses": [
-        "CS101", "EE201", "MATH103", "CS102", "CS201", "CS202",
-        "CS303", "ENG201", "CS304", "MATH301", "CS301", "CS601",
-        "CS302", "CS603", "EE301", "CS602", "CS701", "CS403",
-        "CS402", "CS301_LAB", "CS601_LAB", "CS602_LAB", "CS701_LAB"
-      ]
-    },
-    
-    "specialized": {
-      "description": "دروس تخصصی نرم‌افزار",
-      "total_credits": 19,
-      "courses": [
-        "CS401", "CS501", "CS503", "CS502", "CS801", "CS901", "CS902"
-      ]
-    },
-    
-    "specialization_tracks": {
-      "description": "دروس تمرکز تخصصی",
+  "specialization_tracks": {
+    "information_systems": {
+      "name": "سیستم‌های اطلاعاتی",
       "required_credits": 12,
-      "tracks": [
+      "courses": [
         {
-          "track_name": "سیستم‌های اطلاعاتی",
-          "courses": [
-            "پیاده‌سازی سیستم پایگاه داده",
-            "مبانی داده‌کاوی",
-            "مبانی بازیابی اطلاعات و جستجوی وب",
-            "سیستم‌های اطلاعات مدیریت"
-          ]
+          "course_code": "DB401",
+          "course_name": "پیاده‌سازی سیستم پایگاه داده",
+          "theoretical_credits": 3,
+          "prerequisites": ["DB301"]
         },
         {
-          "track_name": "الگوریتم و محاسبات",
-          "courses": [
-            "نظریه و الگوریتم‌های گراف",
-            "نظریه محاسبات",
-            "مبانی نظریه بازی‌ها",
-            "الگوریتم‌های پیشرفته"
-          ]
+          "course_code": "DM301",
+          "course_name": "مبانی داده‌کاوی",
+          "theoretical_credits": 3,
+          "prerequisites": ["DB301", "CS201"]
         },
         {
-          "track_name": "سیستم‌های نرم‌افزاری",
-          "courses": [
-            "تعامل انسان و کامپیوتر",
-            "آزمون نرم‌افزار",
-            "روش‌های رسمی در مهندسی نرم‌افزار",
-            "طراحی شی‌گرای سیستم‌ها"
-          ]
+          "course_code": "IR301",
+          "course_name": "مبانی بازیابی اطلاعات و جستجوی وب",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS301"]
         },
         {
-          "track_name": "امنیت رایانه",
-          "courses": [
-            "امنیت شبکه",
-            "مبانی رایانش امن",
-            "امنیت سیستم‌های پایه",
-            "مدیریت امنیت ارتباطات"
-          ]
-        },
-        {
-          "track_name": "بازی‌های کامپیوتری",
-          "courses": [
-            "سیستم‌های چندرسانه‌ای",
-            "طراحی بازی‌های کامپیوتری",
-            "گرافیک کامپیوتری",
-            "مبانی پویانمایی کامپیوتری"
-          ]
-        },
-        {
-          "track_name": "هوش مصنوعی",
-          "courses": [
-            "مبانی هوش محاسباتی",
-            "مبانی بینایی کامپیوتر",
-            "مبانی پردازش و گفتار",
-            "اصول رباتیکز"
-          ]
-        },
-        {
-          "track_name": "شبکه‌های کامپیوتری",
-          "courses": [
-            "امنیت شبکه",
-            "سیستم‌های نهفته و بی‌درنگ",
-            "انتقال داده",
-            "مبانی شبکه‌های بی‌سیم"
-          ]
+          "course_code": "MIS301",
+          "course_name": "سیستم‌های اطلاعات مدیریت",
+          "theoretical_credits": 3,
+          "prerequisites": ["SE201"]
         }
       ]
     },
-    
-    "elective": {
-      "description": "دروس اختیاری",
-      "required_credits": 8,
-      "note": "8 واحد از فهرست دروس اختیاری با رعایت پیش‌نیاز"
-    },
-    
-    "general": {
-      "description": "دروس عمومی",
-      "total_credits": 26,
-      "note": "اخذ تمام دروس عمومی اجباری است",
+    "algorithms_computation": {
+      "name": "الگوریتم و محاسبات",
+      "required_credits": 12,
       "courses": [
-        "90029", "ENG101", "99079", "99080", "90005", 
-        "90610", "90615", "90001", "90620", "90755",
-        "90630", "91004", "91003", "91006"
+        {
+          "course_code": "GRAPH301",
+          "course_name": "نظریه و الگوریتم‌های گراف",
+          "theoretical_credits": 3,
+          "prerequisites": ["MATH103"]
+        },
+        {
+          "course_code": "COMP301",
+          "course_name": "نظریه محاسبات",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS303"]
+        },
+        {
+          "course_code": "GAME301",
+          "course_name": "مبانی نظریه بازی‌ها",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS301"]
+        },
+        {
+          "course_code": "ADV_ALG301",
+          "course_name": "الگوریتم‌های پیشرفته",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS301"]
+        }
+      ]
+    },
+    "software_systems": {
+      "name": "سیستم‌های نرم‌افزاری",
+      "required_credits": 12,
+      "courses": [
+        {
+          "course_code": "HCI301",
+          "course_name": "تعامل انسان و کامپیوتر",
+          "theoretical_credits": 3,
+          "prerequisites": ["SE201"]
+        },
+        {
+          "course_code": "TEST301",
+          "course_name": "آزمون نرم‌افزار",
+          "theoretical_credits": 3,
+          "prerequisites": ["SE201"]
+        },
+        {
+          "course_code": "FORMAL301",
+          "course_name": "روش‌های رسمی در مهندسی نرم‌افزار",
+          "theoretical_credits": 3,
+          "prerequisites": ["SE201"]
+        },
+        {
+          "course_code": "OOD301",
+          "course_name": "طراحی شی‌گرای سیستم‌ها",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS102"]
+        }
+      ]
+    },
+    "computer_security": {
+      "name": "امنیت رایانه",
+      "required_credits": 12,
+      "courses": [
+        {
+          "course_code": "NET_SEC401",
+          "course_name": "امنیت شبکه",
+          "theoretical_credits": 3,
+          "prerequisites": ["NET401"]
+        },
+        {
+          "course_code": "SECURE_COMP301",
+          "course_name": "مبانی رایانش امن",
+          "theoretical_credits": 3,
+          "prerequisites": []
+        },
+        {
+          "course_code": "SYS_SEC301",
+          "course_name": "امنیت سیستم‌های پایه",
+          "theoretical_credits": 3,
+          "prerequisites": ["DB301", "CS501"]
+        },
+        {
+          "course_code": "COMM_SEC301",
+          "course_name": "مدیریت امنیت ارتباطات",
+          "theoretical_credits": 3,
+          "corequisites": ["SECURE_COMP301"]
+        }
+      ]
+    },
+    "computer_graphics": {
+      "name": "بازی‌های کامپیوتری",
+      "required_credits": 12,
+      "courses": [
+        {
+          "course_code": "MULTIMEDIA301",
+          "course_name": "سیستم‌های چندرسانه‌ای",
+          "theoretical_credits": 3,
+          "prerequisites": ["STAT101", "EE301"]
+        },
+        {
+          "course_code": "GAME_DESIGN301",
+          "course_name": "طراحی بازی‌های کامپیوتری",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS102"]
+        },
+        {
+          "course_code": "CG301",
+          "course_name": "گرافیک کامپیوتری",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS102"]
+        },
+        {
+          "course_code": "ANIM301",
+          "course_name": "مبانی پویانمایی کامپیوتری",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS102"]
+        }
+      ]
+    },
+    "artificial_intelligence": {
+      "name": "هوش مصنوعی",
+      "required_credits": 12,
+      "courses": [
+        {
+          "course_code": "CI301",
+          "course_name": "مبانی هوش محاسباتی",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS102"]
+        },
+        {
+          "course_code": "CV301",
+          "course_name": "مبانی بینایی کامپیوتر",
+          "theoretical_credits": 3,
+          "prerequisites": ["CI301"]
+        },
+        {
+          "course_code": "SP301",
+          "course_name": "مبانی پردازش گفتار",
+          "theoretical_credits": 3,
+          "prerequisites": ["STAT101", "EE301"]
+        },
+        {
+          "course_code": "ROBOT301",
+          "course_name": "اصول رباتیک",
+          "theoretical_credits": 3,
+          "prerequisites": ["EE301"]
+        }
+      ]
+    },
+    "computer_networks": {
+      "name": "شبکه‌های کامپیوتری",
+      "required_credits": 12,
+      "courses": [
+        {
+          "course_code": "NET_SEC402",
+          "course_name": "امنیت شبکه",
+          "theoretical_credits": 3,
+          "prerequisites": ["NET401"]
+        },
+        {
+          "course_code": "EMBED401",
+          "course_name": "سیستم‌های نهفته و بی‌درنگ",
+          "theoretical_credits": 3,
+          "prerequisites": ["CS501", "CS502"]
+        },
+        {
+          "course_code": "COMM401",
+          "course_name": "انتقال داده",
+          "theoretical_credits": 3,
+          "prerequisites": ["STAT101", "EE301"]
+        },
+        {
+          "course_code": "WIRELESS401",
+          "course_name": "مبانی شبکه‌های بی‌سیم",
+          "theoretical_credits": 3,
+          "prerequisites": ["COMM401"]
+        }
       ]
     }
   },
-  
-  "prerequisite_rules": {
-    "strict_enforcement": true,
-    "description": "پیش‌نیازها باید با نمره قبولی (حداقل 10) گذرانده شوند",
-    "special_requirements": {
-      "internship": "کارآموزی بعد از 80 واحد",
-      "project": "پروژه بعد از 100 واحد"
-    }
+
+  "course_summary": {
+    "general_courses": 26,
+    "pre_university_courses": 8,
+    "foundation_courses": 20,
+    "core_courses": 59,
+    "specialized_courses": 19,
+    "specialization_track_courses": 12,
+    "elective_courses": 8,
+    "total_credits": 152
   },
-  
-  "credit_distribution": {
-    "total_required": 152,
-    "breakdown": {
-      "general_courses": 26,
-      "pre_university": 8,
-      "elective_courses": 8,
-      "foundation_courses": 20,
-      "core_courses": 59,
-      "specialized_software": 19,
-      "specialization_track": 12
-    }
+
+  "graduation_requirements": {
+    "minimum_total_credits": 152,
+    "minimum_gpa": 12.0,
+    "maximum_failed_courses": 3,
+    "internship_requirement": "بعد از ۸۰ واحد",
+    "project_requirement": "بعد از ۱۰۰ واحد",
+    "specialization_credits_required": 12
   }
 }
