@@ -294,7 +294,7 @@ async def curriculum_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
             # Send curriculum for 1403+ entries
             await context.bot.send_document(
                 chat_id=query.message.chat_id,
-                document="BQACAgQAAxkBAAIBdmi7D0z-mBYMOZMUS9pBGc9fWA1HAAKaHAACp6HZUba7PsVZWLdcNgQ",
+                document="BQACAgQAAxkBAAMTaLuSzvkEXmNfWF2Y4SrZ9mG7DoMAAjsbAAI3Y9hRqdfH75_EbmE2BA",
                 caption="📚 چارت درسی - ورودی 1403 به بعد"
             )
             
@@ -302,7 +302,7 @@ async def curriculum_callback(update: Update, context: ContextTypes.DEFAULT_TYPE
             # Send curriculum for pre-1403 entries
             await context.bot.send_document(
                 chat_id=query.message.chat_id,
-                document="BQACAgQAAxkBAAIBdGi7Dzfv830cAAEsPLAmkKW3n-8mjAACmRwAAqeh2VHORSCEUKr-bzYE",
+                document="BQACAgQAAxkBAAMSaLuSr7I4QfSNsXqFZS-0lc-t1R8AAjobAAI3Y9hR5bMxyu99AXc2BA",
                 caption="📚 چارت درسی - ورودی قبل از 1403"
             )
         
