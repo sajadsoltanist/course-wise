@@ -29,7 +29,7 @@ An intelligent Telegram bot that helps Computer Engineering students make optima
 ### Development Setup
 ```bash
 # Clone and setup
-git clone <repository>
+git clone https://github.com/sajadsoltanist/course-wise.git
 cd course-wise
 python -m venv venv
 source venv/bin/activate
@@ -56,6 +56,57 @@ docker compose -f docker-compose.dev.yml up -d
 
 # Run migrations
 docker exec coursewise-bot-dev python -m alembic upgrade head
+```
+
+## System Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Telegram      │    │   CourseWise    │    │   External      │
+│   Ecosystem     │    │   Bot System    │    │   Services      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+
+┌─────────────────┐         ┌─────────────────┐         ┌─────────────────┐
+│  👤 Student     │◄────────┤  📱 Telegram    │         │  🧠 OpenAI      │
+│     Users       │  HTTP   │    Bot API      │         │    GPT-4o       │
+└─────────────────┘         └─────────────────┘         └─────────────────┘
+                                     │                           ▲
+                                     │ Webhook/                  │
+                                     │ Polling                   │ API
+                                     ▼                           │ Calls
+                            ┌─────────────────┐                  │
+                            │  🎛️ CourseWise  │──────────────────┘
+                            │   Bot Handler   │
+                            └─────────────────┘
+                                     │
+                            ┌────────┼────────┐
+                            │                 │
+                            ▼                 ▼
+                   ┌─────────────────┐ ┌─────────────────┐
+                   │  📋 Session     │ │  🧠 AI Service  │
+                   │   Management    │ │   (RAG Engine)  │
+                   └─────────────────┘ └─────────────────┘
+                            │                 │
+                            │                 │ Context
+                            │                 │ Retrieval
+                            ▼                 ▼
+                   ┌─────────────────┐ ┌─────────────────┐
+                   │  🐘 PostgreSQL  │ │  📚 Static      │
+                   │   Database      │ │   Data Files    │
+                   │                 │ │                 │
+                   │ • Students      │ │ • Curriculum    │
+                   │ • Grades        │ │ • Course Rules  │
+                   │ • Sessions      │ │ • Offerings     │
+                   └─────────────────┘ └─────────────────┘
+
+Request Flow:
+1. Student sends message → Telegram API
+2. Telegram API → CourseWise Bot Handler  
+3. Handler loads session state from PostgreSQL
+4. Handler calls AI Service for intelligent processing
+5. AI Service retrieves context from static data files
+6. AI Service queries OpenAI GPT-4o with enriched context
+7. Response flows back: AI → Handler → Telegram → Student
 ```
 
 ## Project Structure
@@ -95,6 +146,84 @@ alembic/           # Database migrations
 - **user_sessions**: Bot conversation state with JSONB data
 - **courses**: Course catalog (populated from static data)
 - **student_grades**: Academic history with attempt tracking
+
+## CI/CD & Deployment Pipeline
+
+CourseWise uses modern DevOps practices with automated deployment pipeline:
+
+```
+Development Workflow:
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Developer     │    │   GitHub        │    │   Production    │
+│   Environment   │    │   Repository    │    │   Server        │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+
+┌─────────────────┐         ┌─────────────────┐         ┌─────────────────┐
+│  💻 Local       │  git    │  📦 GitHub      │  SSH    │  🚀 Production  │
+│   Development   │ push    │   Actions       │ Deploy  │   Server        │
+│                 │────────▶│                 │────────▶│                 │
+│ • Docker Compose│         │ • Build Image   │         │ • Docker Compose│
+│ • Hot Reload    │         │ • Run Tests     │         │ • Auto Migration│
+│ • Local DB      │         │ • Push to GHCR  │         │ • Health Check  │
+└─────────────────┘         └─────────────────┘         └─────────────────┘
+                                     │
+                                     ▼
+                            ┌─────────────────┐
+                            │  🐳 GitHub      │
+                            │   Container     │
+                            │   Registry      │
+                            │   (GHCR)        │
+                            └─────────────────┘
+
+Deployment Steps:
+1. Code push to main branch triggers GitHub Actions
+2. Docker image built and pushed to GitHub Container Registry
+3. SSH connection established to production server
+4. Latest image pulled and containers updated
+5. Database migrations run automatically
+6. Health checks verify deployment success
+```
+
+### Development Environment
+
+**Local Setup:**
+```bash
+# Development with hot reload
+docker compose -f docker-compose.dev.yml up -d
+
+# Production-like testing
+docker compose -f docker-compose.prod.yml up -d
+```
+
+**Key Features:**
+- **Hot Reload**: Code changes reflected immediately in development
+- **Database Seeding**: Automatic population of course data
+- **Environment Isolation**: Separate configs for dev/prod
+- **Health Monitoring**: Container health checks and logging
+
+### Production Deployment
+
+**Infrastructure:**
+- **Containerization**: Docker + Docker Compose
+- **Image Registry**: GitHub Container Registry (GHCR)
+- **Database**: PostgreSQL with automated migrations
+- **Reverse Proxy**: Nginx (if applicable)
+- **SSL/TLS**: Let's Encrypt certificates
+
+**Deployment Process:**
+1. **Build Stage**: Multi-stage Docker build for optimized images
+2. **Test Stage**: Automated testing (if tests exist)
+3. **Registry Push**: Secure push to GHCR with authentication
+4. **Server Deployment**: SSH-based deployment with zero downtime
+5. **Migration**: Automatic Alembic database migrations
+6. **Verification**: Health checks and log monitoring
+
+**Security & Best Practices:**
+- SSH key-based authentication for deployment
+- Environment variables for sensitive data
+- Container security with non-root users
+- Automated secret rotation capabilities
+- Database backup strategies
 
 ## Academic Context
 
